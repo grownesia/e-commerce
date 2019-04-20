@@ -1,28 +1,95 @@
-<h1><?php echo lang('login_heading');?></h1>
-<p><?php echo lang('login_subheading');?></p>
+<!DOCTYPE html>
+<html lang="en">
 
-<div id="infoMessage"><?php echo $message;?></div>
+<head>
 
-<?php echo form_open("auth/login");?>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  <p>
-    <?php echo lang('login_identity_label', 'identity');?>
-    <?php echo form_input($identity);?>
-  </p>
+  <title>Title</title>
 
-  <p>
-    <?php echo lang('login_password_label', 'password');?>
-    <?php echo form_input($password);?>
-  </p>
+  <!-- Custom fonts for this template-->
+  <link href="<?=base_url('assets/backend/vendor/fontawesome-free/css/all.min.css');?>" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <p>
-    <?php echo lang('login_remember_label', 'remember');?>
-    <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
-  </p>
+  <!-- Custom styles for this template-->
+  <link href="<?=base_url('assets/backend/css/sb-admin-2.min.css');?>" rel="stylesheet">
 
+  <!-- aleret -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-  <p><?php echo form_submit('submit', lang('login_submit_btn'));?></p>
+</head>
 
-<?php echo form_close();?>
+<body class="bg-gradient-primary">
 
-<p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
+  <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-lg-6 my-5">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-2">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4"><?php echo lang('login_heading');?></h1>
+                  </div>
+                  <?php if(isset($message)){ ?>
+                  <script>
+                      swal({
+                        title: "Login Failure!",
+                        text: "You must check our account!",
+                        icon: "warning",
+                        button: "Ashiaapp!",
+                      });
+                    </script>
+                  <?php } ?>
+                  <?=form_open('auth/login',array('class'=>'user'));?>
+                    <div class="form-group">
+                      <?php echo form_input($identity);?>
+                    </div>
+                    <div class="form-group">
+                      <?php echo form_input($password);?>
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-control custom-checkbox small">
+                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                      Login
+                    </button>
+                  <?=form_close();?>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="<?=base_url('assets/backend/vendor/jquery/jquery.min.js');?>"></script>
+  <script src="<?=base_url('assets/backend/vendor/bootstrap/js/bootstrap.bundle.min.js');?>"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="<?=base_url('assets/backend/vendor/jquery-easing/jquery.easing.min.js');?>"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="<?=base_url('assets/backend/js/sb-admin-2.min.js');?>"></script>
+
+</body>
+
+</html>

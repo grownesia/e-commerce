@@ -89,14 +89,20 @@ class Auth extends CI_Controller
 			// set the flash data error message if there is one
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
-			$this->data['identity'] = array('name' => 'identity',
-				'id' => 'identity',
-				'type' => 'text',
+			$this->data['identity'] = array(
+				'class'       => 'form-control form-control-user',
+				'id'          => 'exampleInputEmail',
+				'name'        => 'identity',
+				'placeholder' => 'Email',
+                'type'        => 'email',
 				'value' => $this->form_validation->set_value('identity'),
 			);
-			$this->data['password'] = array('name' => 'password',
-				'id' => 'password',
-				'type' => 'password',
+			$this->data['password'] = array(
+				'class'       => 'form-control form-control-user',
+				'id'          => 'exampleInputPassword',
+				'name'        => 'password',
+				'placeholder' => 'Password',
+				'type'        => 'password'
 			);
 
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'login', $this->data);
