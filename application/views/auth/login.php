@@ -66,7 +66,14 @@
                       </div>
                     </div>
                     <?php echo form_submit('submit', lang('login_submit_btn'), 'class="btn btn-primary btn-user btn-block"');?>
-                  <?=form_close();?>
+                  <?=form_close();?>                  
+                  <hr>
+                  <div class="text-center">
+                    <a class="small" href="forgot_password"><?php echo lang('login_forgot_password');?></a>
+                  </div>
+                  <div class="text-center">
+                    <a class="small" href="register.html">Create an Account!</a>
+                  </div>
                 </div>
               </div>
             </div>
