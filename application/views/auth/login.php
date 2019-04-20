@@ -44,8 +44,8 @@
                   <?php if(isset($message)){ ?>
                   <script>
                       swal({
-                        title: "Login Failure!",
-                        text: "You must check our account!",
+                        title: "Grownesia Alert",
+                        text: "<?=$message;?>",
                         icon: "warning",
                         button: "Ashiaapp!",
                       });
@@ -60,13 +60,12 @@
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
+                        <!-- belum fungsi -->
                         <input type="checkbox" class="custom-control-input" id="customCheck">
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-user btn-block">
-                      Login
-                    </button>
+                    <?php echo form_submit('submit', lang('login_submit_btn'), 'class="btn btn-primary btn-user btn-block"');?>
                   <?=form_close();?>
                 </div>
               </div>
