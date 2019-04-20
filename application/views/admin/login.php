@@ -36,9 +36,9 @@
               <div class="col-lg-12">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Future Login!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Welcome Grow!</h1>
                   </div>
-                  <?=form_open('auth/action_login',array('class'=>'user'));?>
+                  <?=form_open('auth/login',array('class'=>'user'));?>
                     <div class="form-group">
                       <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email">
                     </div>
